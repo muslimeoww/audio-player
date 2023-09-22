@@ -3,8 +3,13 @@ const wrapper = document.querySelector(".wrapper"),
 musicImg = wrapper.querySelector(".img-area img"),
 musicName = wrapper.querySelector(".song-details .name"),
 musicArtist = wrapper.querySelector(".song-details .artist"),
-musicAudio = wrapper.querySelector("#main-audio"),
-playPauseBtn = wrapper.querySelector(".play-pause");
+mainAudio = wrapper.querySelector("#main-audio"),
+playPauseBtn = wrapper.querySelector(".play-pause"),
+prevBtn = wrapper.querySelector("#prev"),
+nextBtn = wrapper.querySelector("#next");
+
+
+
 let musicIndex = 2;
 
 window.addEventListener("load", ()=>{
@@ -15,5 +20,27 @@ function loadMusic(indexNumb){
     musicName.innerText = allMusic[indexNumb - 1].name;
     musicArtist.innerText = allMusic[indexNumb - 1].artist;
     musicImg.src = `images/${allMusic[indexNumb - 1].img}.jpg`;
-    musicAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
+    mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
 }
+
+function playMusic() {
+    wrapper.classList.add("paused");
+    playPauseBtn.querySelector("i").innerText = "pause";
+    mainAudio.play();
+}
+
+function pauseMusic() {
+    wrapper.classList.remove("paused");
+    playPauseBtn.querySelector("i").innerText = "play_arrow";
+    mainAudio.pause();
+}
+
+// Тернарный оператор ван лав
+playPauseBtn.addEventListener("click", ()=> {
+    const isMusicPaused = wrapper.classList.contains("paused");
+    isMusicPaused ? pauseMusic() : playMusic();
+});
+
+nextBtn.addEventListener("click", ()=>{
+    nextMusic();
+})
