@@ -16,6 +16,7 @@
   --white: #ffffff;
   --darkwhite: #cecaca;
   --pinkshadow: #ffcbdd;
+  --lol: #ff5680;
   --lightbshadow: rgba(0,0,0,0.15);
 }
 body {
@@ -87,7 +88,7 @@ color: var(--lightblack);
     width: 50%;
     position: relative;
     border-radius: inherit;
-    background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
+    background: linear-gradient(90deg, var(--pink) 0%, var(--lol) 100%);
 }
 .progress-bar::before {
 content: "";
@@ -121,7 +122,7 @@ transition: opacity 0.2s ease;
 .controls i{
  font-size: 28px;
  user-select: none;
- background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+ background: linear-gradient(var(--pink) 0%, var(--lol) 100%);
  background-clip: text;
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
@@ -156,7 +157,7 @@ transition: opacity 0.2s ease;
     height: 43px;
     width: 43px;
     border-radius: inherit;
-    background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+    background: linear-gradient(var(--pink) 0%, var(--lol) 100%);
 }
 
 .play-pause i{
