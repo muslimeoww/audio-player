@@ -6,7 +6,8 @@ musicArtist = wrapper.querySelector(".song-details .artist"),
 mainAudio = wrapper.querySelector("#main-audio"),
 playPauseBtn = wrapper.querySelector(".play-pause"),
 prevBtn = wrapper.querySelector("#prev"),
-nextBtn = wrapper.querySelector("#next");
+nextBtn = wrapper.querySelector("#next"),
+progressBar = wrapper.querySelector(".progress-bar");
 
 
 
@@ -35,6 +36,20 @@ function pauseMusic() {
     mainAudio.pause();
 }
 
+function nextMusic(){
+    musicIndex++;
+    musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
+    loadMusic(musicIndex);
+    playMusic();
+}
+
+function prevMusic(){
+    musicIndex--;
+    musicIndex < 1 ? musicIndex = allMusic.length : musicIndex =  musicIndex;
+    loadMusic(musicIndex);
+    playMusic();
+}
+
 // Тернарный оператор ван лав
 playPauseBtn.addEventListener("click", ()=> {
     const isMusicPaused = wrapper.classList.contains("paused");
@@ -43,4 +58,14 @@ playPauseBtn.addEventListener("click", ()=> {
 
 nextBtn.addEventListener("click", ()=>{
     nextMusic();
+})
+prevBtn.addEventListener("click", ()=>{
+    prevMusic();
+})
+
+mainAudio.addEventListener("timeupdate", (meow)=> {
+    const currentTime = meow.target.currentTime;
+    const duration = meow.target.duration;
+    let progressWidth = (currentTime / duration) * 100;
+    progressBar.style.width = `${progressWidth}%`;
 })
