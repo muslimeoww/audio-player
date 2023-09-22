@@ -7,6 +7,7 @@ mainAudio = wrapper.querySelector("#main-audio"),
 playPauseBtn = wrapper.querySelector(".play-pause"),
 prevBtn = wrapper.querySelector("#prev"),
 nextBtn = wrapper.querySelector("#next"),
+progressArea = wrapper.querySelector(".progress-area"),
 progressBar = wrapper.querySelector(".progress-bar");
 
 
@@ -71,7 +72,7 @@ mainAudio.addEventListener("timeupdate", (meow)=> {
 
     let musicCurrentTime = wrapper.querySelector(".current"),
         musicDuration = wrapper.querySelector(".duration");
-        
+
     mainAudio.addEventListener("loadeddata", ()=> {
         
         
@@ -93,3 +94,14 @@ mainAudio.addEventListener("timeupdate", (meow)=> {
         }
         musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
 });
+
+
+// прогрес бар клик
+
+progressArea.addEventListener("click", (meow)=> {
+    let prpgressWidth = progressArea.clientWidth;
+    let clickedoff = meow.offsetX;
+    let songDuration = mainAudio.duration;
+
+    mainAudio.currentTime = (clickedoff / prpgressWidth) * songDuration;
+})
