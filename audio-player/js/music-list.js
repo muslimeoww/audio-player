@@ -4,6 +4,7 @@ let allMusic = [
         artist: "Nakatomi X",
         img: "one-1",
         src: "one-1"
+
     },
     {
         name: "Жертва соблазна",
