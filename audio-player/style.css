@@ -34,7 +34,8 @@ body {
 .wrapper i{
     cursor: pointer;
 }
-.top-bar {
+.top-bar .progress-area .timer,
+.controls{
 display: flex;
 align-items: center;
 justify-content: space-between;
@@ -105,10 +106,26 @@ transition: opacity 0.2s ease;
     opacity: 1;
 }
 
-.progress-area .tiber {
-    
+.progress-area .timer {
+    margin-top: 2px;
+
 }
-
+.timer span {
+    font-size: 13px;
+    color: var(--lightblack);
+}
 .controls {
-
+ margin: 40px 0 5px 0;
+}
+.controls i{
+ font-size: 28px;
+ user-select: none;
+ background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
+.controls i:nth-child(2),
+.controls i:nth-child(4){
+    font-size: 43px;
 }
