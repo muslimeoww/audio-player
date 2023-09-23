@@ -13,6 +13,7 @@ backImg = document.querySelector("#backgroundsss"),
 
 progressBar = wrapper.querySelector(".progress-bar");
 
+mainAudio.volume = 0.2;
 
 
 let musicIndex = 2;
