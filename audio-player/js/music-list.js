@@ -36,5 +36,11 @@ let allMusic = [
         artist: "Aqua",
         img: "six-6",
         src: "six-6",
+    },
+    {
+        name: "STFU",
+        artist: "PINK GUY",
+        img: "seven-7",
+        src: "seven-7"
     }
 ]
