@@ -24,9 +24,12 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    flex-direction: column;
 }
 
 .wrapper {
+    margin-bottom: auto;
+    margin-top: auto;
     width: 460px;
     border-radius: 15px;
     padding: 25px 30px;
@@ -184,4 +187,22 @@ transition: opacity 0.2s ease;
     bottom: 0;
     filter: blur(10px);
     z-index: -1;
+}
+
+.rs-no {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 1%;
+}
+
+.img-rs {
+    width: 100px;
+    height: auto;
+}
+
+.hreff {
+    text-decoration: none;
+    color: inherit;
 }
